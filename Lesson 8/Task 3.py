@@ -1,15 +1,15 @@
 def make_operation(operator, *args):
     args = list(args)
-    res = args[-1]
-    for i in range(len(args)-1):
+    res = args[0]
+    for i in args[1:]:
         if operator == '+':
-            res += args[i]
+            res += i
         elif operator == '-':
-            res -= args[i]
+            res -= i
         elif operator == '*':
-            res *= args[i]
+            res *= i
     print(res)
 
 
-make_operation('*', 7, 6)
+make_operation('-', 5, 5, -10, -20)
 
