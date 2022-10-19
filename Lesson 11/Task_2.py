@@ -1,6 +1,6 @@
 import json
 
-FILE_NAME = '../Lesson 11/phonebook.json'
+FILE_NAME = 'phonebook.json'
 
 
 def save_to_disk(phone_book: dict, file_name: str) -> None:
@@ -101,6 +101,7 @@ def search_city_state(my_book):
         print(my_book[search_city])
     except KeyError:
         print("Entered first name does not exist!")
+
 
 if __name__ == '__main__':
     data = read_from_file(FILE_NAME)
