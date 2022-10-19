@@ -34,10 +34,10 @@ def add_item(my_book: dict):
     phone_number = input('Enter your phone number: ')
     city = input('Enter your city: ')
     my_book[phone_number] = {'first_name': first_name,
-               'last_name': last_name,
-               'full_name': full_name,
-               'phone_number': phone_number,
-               'city': city}
+                             'last_name': last_name,
+                             'full_name': full_name,
+                             'phone_number': phone_number,
+                             'city': city}
     return my_book
 
 
@@ -72,35 +72,49 @@ def search_phone_number(my_book):
 
 
 def search_first_name(my_book):
-    try:
-        search_first = input("Please, write first name: ")
-        print(my_book[search_first])
-    except KeyError:
+    search_first = input("Please, write first name: ")
+    flag = False
+    for k, v in my_book.items():
+        if search_first == my_book[k]['first_name']:
+            print(my_book[k])
+            flag = True
+    if not flag:
         print("Entered first name does not exist!")
 
 
 def search_last_name(my_book):
-    try:
-        search_last = input("Please, write last name: ")
-        print(my_book[search_last])
-    except KeyError:
+    search_last = input("Please, write last name: ")
+    flag = False
+    for k, v in my_book.items():
+        if search_last == my_book[k]['last_name']:
+            print(my_book[k])
+            flag = True
+    if not flag:
         print("Entered last name does not exist!")
 
 
 def search_full_name(my_book):
-    try:
-        search_full = input("Please, write full name: ")
-        print(my_book[search_full])
-    except KeyError:
+    search_full = input("Please, write full name: ")
+    flag = False
+    for k, v in my_book.items():
+        if search_full == my_book[k]['full_name']:
+            print(my_book[k])
+            flag = True
+    if not flag:
         print("Entered full name does not exist!")
 
 
 def search_city_state(my_book):
-    try:
-        search_city = input("Please, write first name: ")
-        print(my_book[search_city])
-    except KeyError:
-        print("Entered first name does not exist!")
+    search_city = input("Please, city name: ")
+    flag = False
+    for k, v in my_book.items():
+        if search_city == my_book[k]['city']:
+            print(my_book[k])
+            flag = True
+    if not flag:
+        print("Entered city does not exist!")
+
+
 
 
 if __name__ == '__main__':
