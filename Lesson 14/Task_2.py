@@ -15,7 +15,7 @@ def stop_words(words: list):
     return decorator
 
 
-@stop_words(['pepsi', 'BMW'])
+@stop_words(['in', 'new'])
 def create_slogan(name: str) -> str:
     return f"{name} drinks pepsi in his brand new BMW !"
 

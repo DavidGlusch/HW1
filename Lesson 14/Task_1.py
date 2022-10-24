@@ -1,7 +1,7 @@
 def logger(func):
-    def wrapper():
+    def wrapper(*args):
         print('!' * 50)
-        print(func)  # NOTE! It should print the function, not the result of its execution!
+        print(f'{func.__name__} called with {args}')
         print('!' * 50)
     return wrapper
 
@@ -16,5 +16,5 @@ def square_all(*args):
     return [arg ** 2 for arg in args]
 
 
-add()
-square_all()
+add(4, 6)
+square_all(3, 5, 7 ,8)
