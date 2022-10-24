@@ -1,7 +1,5 @@
 class TVController:
-    def __init__(self, channels=None, current_channel=0):
-        if channels is None:
-            channels = ["BBC", "Discovery", "TV1000"]
+    def __init__(self, channels, current_channel=0):
         self.current_channel = current_channel
         self.channels = channels
 
@@ -54,7 +52,7 @@ class TVController:
 
 
 if __name__ == '__main__':
-    remote = TVController()
+    remote = TVController(["BBC", "Discovery", "TV1000"])
 
     while True:
         choice = input("""
